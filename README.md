@@ -17,3 +17,11 @@ An institutional model validation suite built to satisfy Model Risk Management (
 │   └── metrics.py                    <- Base math routines (Gini, KS, PSI tracking)
 ├── validation_report.md              <- Official SR 11-7 validation summary document
 └── requirements.txt                  <- Python pinning constraints
+
+## 💾 Data Governance & Repository Structure
+
+Due to enterprise data conservation guidelines and remote asset storage limits, the massive historic training and development data arrays are managed via decoupled upstream infrastructure (or simulated via local disk layers). 
+
+To ensure immediate validation reproducibility for auditors and reviewers, this repository explicitly includes:
+* **`df_oot_final.csv`**: The complete, standalone Out-of-Time (OOT) production validation split (86,951 accounts) required to replicate all Phase 3 through Phase 6 calibration, stress-testing, and forensic failure audits.
+* **`df_scorecard_points.csv`**: The final production-approved credit scorecard allocation matrices utilized by the `ScorecardTransformer` engine.
